@@ -1,4 +1,6 @@
-<h1 style="color:#6600cc;">A Sample Android Application</h1>
+
+<h1 style="color:#6600cc;">Simpsons Character Viewer</h1>
+<h2 style="color:#6600cc;">A Sample Android Application</h1>
 
 <p>Built by <strong>David Irving</strong></p>
 
@@ -19,22 +21,6 @@
 <p>The Simpson Character Viewer provides a user-friendly and visually appealing experience, allowing users to explore a comprehensive list of items and view their details.</p>
 
 
-### Technologies Used
-- Kotlin
-- MVVM
-- LiveData
-- DataBinding
-- Retrofit
-- MUI
-- RecyclerView
-- CardView
-- Fragments
-- Navigation
-- REST API
-- JSON
-- Glide
-
-
 ## Build Instructions
 
 Before getting started, ensure that you have the following:
@@ -44,7 +30,9 @@ Before getting started, ensure that you have the following:
 
 
 <h2>Instruction Set</h2>
-
+<h2>https://www.taskade.com/d/xxpHNeV6VDjtodhM?share=view&view=zRXAffLGxLCzDRge&as=list</h2>
+<a href="https://www.taskade.com/d/xxpHNeV6VDjtodhM?share=view&view=zRXAffLGxLCzDRge&as=list" target="_blank">
+  View o
 <ul>
   <li><input type="checkbox" disabled checked> Connect to Firebase
     <ul>
