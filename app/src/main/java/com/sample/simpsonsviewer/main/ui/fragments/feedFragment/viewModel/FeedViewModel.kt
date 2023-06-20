@@ -1,11 +1,11 @@
-package com.sample.simpsonsviewer.main.ui.viewModels
+package com.sample.simpsonsviewer.main.ui.fragments.feedFragment.viewModel
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-public class SharedViewModel(application: Application): ViewModel() {
+public class FeedViewModel(application: Application): ViewModel() {
     private val logTag = "sharedViewModel"
 
     // create private values for the data we need to monitor

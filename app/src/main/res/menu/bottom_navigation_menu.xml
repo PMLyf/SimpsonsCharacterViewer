@@ -4,30 +4,24 @@
         android:id="@+id/feedFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_list_alt_24"
-        android:title="Back"
+        android:title="@string/nav_feed"
         />
     <item
-        android:id="@+id/postManagement"
+        android:id="@+id/favoritesFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_send_24"
-        android:title="List"
+        android:title="@string/nav_favorites"
         />
     <item
         android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Detail"
+        android:title="@string/nav_home"
         />
     <item
-        android:id="@+id/friendsListFragment"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_group_24"
-        android:title="Forward"
-        />
-    <item
-        android:id="@+id/messageListFragment"
+        android:id="@+id/settingsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_mail_24"
-        android:title="Settings"
+        android:title="@string/nav_settings"
         />
 </menu>
