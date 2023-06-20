@@ -5,12 +5,15 @@ plugins {
 
 android {
     namespace 'com.sample.simpsonsviewer'
-    compileSdk 33
+    compileSdk 34
+    dataBinding{
+        enabled=true
 
+    }
     defaultConfig {
         applicationId "com.sample.simpsonsviewer"
         minSdk 29
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -19,7 +22,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -38,7 +41,46 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.21'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    // Kotlin
+    // Coroutines
+    def coroutine_version = '1.6.4'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
+    // Lifecycle live data
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    // Preferences DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    // WorkManager dependency
+    implementation "androidx.work:work-runtime-ktx:2.8.1"
+
+    // Card view
+    implementation("androidx.cardview:cardview:1.0.0")
+
+    // Retrofit for networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+
+    // joda time library for dealing with time
+    implementation 'joda-time:joda-time:2.12.2'
+
+
+    // glide library for dealing with images
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+
+
 }

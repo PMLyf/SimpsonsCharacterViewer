@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/feedFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_list_alt_24"
+        android:title="Back"
+        />
+    <item
+        android:id="@+id/postManagement"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_send_24"
+        android:title="List"
+        />
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Detail"
+        />
+    <item
+        android:id="@+id/friendsListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_group_24"
+        android:title="Forward"
+        />
+    <item
+        android:id="@+id/messageListFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_mail_24"
+        android:title="Settings"
+        />
+</menu>
