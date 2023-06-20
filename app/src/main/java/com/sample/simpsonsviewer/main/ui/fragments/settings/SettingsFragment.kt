@@ -1,4 +1,8 @@
 package com.sample.simpsonsviewer.main.ui.fragments.settings
+
+import androidx.fragment.app.Fragment
+import com.sample.simpsonsviewer.R
+
 /**
  * Settings Fragment class
  * Gives user the option to change settings
@@ -8,5 +12,6 @@ package com.sample.simpsonsviewer.main.ui.fragments.settings
  * Toggle Firestore / data changes
  *
  * **/
-class SettingsFragment {
+class SettingsFragment: Fragment(R.layout.fragment_settings) {
+
 }

@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph.xml"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.sample.simpsonsviewer.main.ui.fragments.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.sample.simpsonsviewer.main.ui.fragments.feedFragment.FeedFragment"
+        android:label="FeedFragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.sample.simpsonsviewer.main.ui.fragments.favoritesFragment.FavoritesFragment"
+        android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.sample.simpsonsviewer.main.ui.fragments.settings.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
