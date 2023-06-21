@@ -1,12 +1,12 @@
 package com.sample.simpsonsviewer.main.ui.fragments.home
 
+import SharedViewModelFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.nightly.whatever.main.ui.fragments.home.viewmodel.SharedViewModelFactory
 import com.sample.simpsonsviewer.R
 import com.sample.simpsonsviewer.main.ui.viewModels.SharedViewModel
 

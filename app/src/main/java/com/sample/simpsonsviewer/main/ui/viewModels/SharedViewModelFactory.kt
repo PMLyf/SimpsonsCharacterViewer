@@ -1,4 +1,3 @@
-package com.nightly.whatever.main.ui.fragments.home.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
