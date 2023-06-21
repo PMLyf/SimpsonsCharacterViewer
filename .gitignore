@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+*.firebaserc
+*.json
+*.properties
+**/build/
+**/generated/
+**/.idea/
+*.DS_Store
