@@ -10,7 +10,7 @@ import com.sample.simpsonsviewer.main.ui.viewModels.SharedViewModel
  * If a user is not signed in, the data will be stored locally, if they  are signed in, we can use firebase to store and fetch data
  */
 
-class FavoritesFragment: Fragment(R.layout.fragment_home) {
+class FavoritesFragment: Fragment(R.layout.fragment_favorites) {
 
         private val logTag = "FavoritesFragment"
 

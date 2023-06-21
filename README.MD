@@ -31,6 +31,7 @@ Before getting started, ensure that you have the following:
 
 <h2>Instruction Set</h2>
 <h2>https://www.taskade.com/d/xxpHNeV6VDjtodhM?share=view&view=zRXAffLGxLCzDRge&as=list</h2>
+<!-- View Only --><iframe width="100%" height="400px" scrolling="yes" frameborder="no" src="https://www.taskade.com/embed/xxpHNeV6VDjtodhM?as=list&share=view&view=zRXAffLGxLCzDRge&theme=dark&coverImageType=background"></iframe>
 <a href="https://www.taskade.com/d/xxpHNeV6VDjtodhM?share=view&view=zRXAffLGxLCzDRge&as=list" target="_blank">
   View o
 <ul>
