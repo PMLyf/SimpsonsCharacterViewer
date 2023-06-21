@@ -36,8 +36,6 @@ class MainActivity : AppCompatActivity() {
         // Enable App Check Here
         // appCheck()
         setContentView(R.layout.activity_main)
-
-
         navView = findViewById(R.id.bottom_navigation_container)
         toolbar = findViewById(R.id.materialToolbar)
         // create variable for nav host fragment
@@ -51,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                R.id.homeFragment, R.id.feedFragment, R.id.favoritesFragment
             )
         )
-        // support action bar
         setSupportActionBar(toolbar)
         /**
          * this is a kotlin extension function
@@ -59,9 +56,9 @@ class MainActivity : AppCompatActivity() {
          * there are other ways to do this but may introduce bugs/weird animations
          *         we can write tests for this
          * **/
-        toolbar.setupWithNavController(navController)
-
-        /**the tool bar should be connected to the navigation graph**/
+        // Allows the toolbar to manage navigation
+        toolbar.setupWithNavController(navController, appBarConfiguration)
+        // Allows the bottom navigation view to manage navigation
         navView.setupWithNavController(navController)
 
     }
@@ -90,15 +87,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-
-        // Update the nav graph based on the current device orientation.
-        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            // Use the single-screen layout.
-            navController.setGraph(R.navigation.nav_graph)
-        } else {
-            // Use the two-pane layout.
-            navController.setGraph(R.navigation.nav_graph_l)
-        }
 
     }
 

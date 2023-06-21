@@ -1,8 +1,9 @@
 package com.sample.simpsonsviewer.domain.models
 
 import com.sample.simpsonsviewer.network.dto.NetworkCharacter
+import com.sample.simpsonsviewer.network.dto.NetworkDetailCharacter
 
-data class Character(
+data class CharacterDetail(
     val id: Int,
     val name: String,
     val description: String,
@@ -15,18 +16,28 @@ data class Character(
     val friends: List<String>
 ) {
     companion object{
-        fun fromDto(dto: NetworkCharacter): Character {
-            return Character(
+        fun fromDto(dto: NetworkDetailCharacter): CharacterDetail {
+            return CharacterDetail(
+
                 id = dto.id,
+
                 name = dto.name,
+
                 description = dto.description,
+
                 imageUrl = dto.imageUrl,
+
                 age = dto.age,
+
                 weight = dto.weight,
+
                 height = dto.height,
+
                 hairColor = dto.hairColor,
+
                 professions = dto.professions,
-                friends = dto.friends
+
+                friends = dto.friends,
             )
         }
     }
