@@ -2,84 +2,59 @@ package com.sample.simpsonsviewer.main.ui.fragments.feedFragment.viewModel
 
 import android.app.Application
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.work.WorkManager
+import com.sample.simpsonsviewer.domain.models.Character
 
 public class FeedViewModel(application: Application): ViewModel() {
-    private val logTag = "sharedViewModel"
+    private val logTag = "FeedViewModel"
 
-    // create private values for the data we need to monitor
-    // userAuthState, uid, userName, buttonClicked, favorites, charList,
-    // charData
+    private val workManager = WorkManager.getInstance(application)
 
-    private val _userAuthState: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>() }
+    private val _characterList = MutableLiveData<List<Char>>()
+    private val _character = MutableLiveData<Any>()
 
+    // create  a test list of simpsons characters data
+    /**
+     * char model
+     *                 id = dto.id,
+    name = dto.name,
+    description = dto.description,
+    imageUrl = dto.imageUrl,
+    age = dto.age,
+    weight = dto.weight,
+    height = dto.height,
+    hairColor = dto.hairColor,
+    professions = dto.professions,
+    friends = dto.friends
+     * */
 
-    // Public values for the data to be accessed or changed
-    private val _navigateToFavorites = MutableLiveData<Boolean>()
-    val navigateToFavorites: MutableLiveData<Boolean>
-        get() = _navigateToFavorites
+    val characterList: LiveData<List<Char>>
+        get() = _characterList
 
-    private val _navigateToCharList = MutableLiveData<Boolean>()
-    val navigateToCharList: MutableLiveData<Boolean>
-        get() = _navigateToCharList
+    fun getCharacterList(): List<Character> {
+        // get character list from server
+        val testList = ArrayList<Character>(
 
-    private val _navigateToCharData = MutableLiveData<Boolean>()
-    val navigateToCharData: MutableLiveData<Boolean>
-        get() = _navigateToCharData
-
-    private val _navigateToLogin = MutableLiveData<Boolean>()
-    val navigateToLogin: MutableLiveData<Boolean>
-        get() = _navigateToLogin
-
-    private val _navigateToSettings = MutableLiveData<Boolean>()
-
-    val navigateToSettings: MutableLiveData<Boolean>
-        get() = _navigateToSettings
-
-    init {
-        Log.i(logTag, "sharedViewModel created!")
-    }
-    // values  that need to be monitored by the ui
-
-    // a function to reset navigation flags
-    // this can be accessed by the ui
-    fun resetNavFlags() {
-        _navigateToFavorites.value = false
-        _navigateToCharList.value = false
-        _navigateToCharData.value = false
-        _navigateToLogin.value = false
-        _navigateToSettings.value = false
-    }
-    // public functions to trigger navigation
-    fun onFavorites() {
-        Log.i(logTag, "onFavorites")
-        _navigateToFavorites.value = true
+        )
+        return testList
     }
 
-    fun onCharList() {
-        Log.i(logTag, "onCharList")
-        _navigateToCharList.value = true
+    fun displayCharacterDetails(it: Any) {
+        TODO("Not yet implemented")
     }
 
-    fun onCharData() {
-        Log.i(logTag, "onCharData")
-        _navigateToCharData.value = true
+    fun onRemovePost(position: Int) {
+
     }
 
-    fun onLogin() {
-        Log.i(logTag, "onLogin")
-        _navigateToLogin.value = true
-    }
+    // give me a public function called genTestList that returns a list of Characters from the model. Create the list here in the function with random simpsons daa
+    fun genTestList() {
 
-    fun onSettings() {
-        Log.i(logTag, "onSettings")
-        _navigateToSettings.value = true
+
     }
 
 
-    // companion object
-    companion object {
-        private const val TAG = "SharedViewModel"
-    }
 }

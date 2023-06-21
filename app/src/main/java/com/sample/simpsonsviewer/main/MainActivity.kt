@@ -1,9 +1,14 @@
 package com.sample.simpsonsviewer.main
 
+import SharedViewModelFactory
+import android.content.Context
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -15,9 +20,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sample.simpsonsviewer.R
+import com.sample.simpsonsviewer.main.ui.viewModels.SharedViewModel
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navView: BottomNavigationView
     private lateinit var navController: NavController
@@ -31,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         // Enable App Check Here
         // appCheck()
         setContentView(R.layout.activity_main)
+
+
         navView = findViewById(R.id.bottom_navigation_container)
         toolbar = findViewById(R.id.materialToolbar)
         // create variable for nav host fragment
@@ -50,10 +57,11 @@ class MainActivity : AppCompatActivity() {
          * this is a kotlin extension function
          * works for the tool bar and bottom action bar
          * there are other ways to do this but may introduce bugs/weird animations
+         *         we can write tests for this
          * **/
-        toolbar.setupWithNavController(navController, appBarConfiguration)
+        toolbar.setupWithNavController(navController)
+
         /**the tool bar should be connected to the navigation graph**/
-        // we can write tests for this
         navView.setupWithNavController(navController)
 
     }
@@ -79,6 +87,20 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        // Update the nav graph based on the current device orientation.
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            // Use the single-screen layout.
+            navController.setGraph(R.navigation.nav_graph)
+        } else {
+            // Use the two-pane layout.
+            navController.setGraph(R.navigation.nav_graph_l)
+        }
+
+    }
 
     // uncomment this to enable app check during production
     // private fun appCheck(){}
