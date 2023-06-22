@@ -13,4 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Simpsons Character Viewer"
-include ':app'
+include ':simpsonsviewer'
+include ':wireviewer'
+include ':shared'
